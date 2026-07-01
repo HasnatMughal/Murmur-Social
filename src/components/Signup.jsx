@@ -19,7 +19,7 @@ function Signup() {
             name, email, password, 
           }) 
           if(userAccount){
-           navigate("/feed")
+           navigate("/")
           }
         } catch (error) {
             console.log(error);
