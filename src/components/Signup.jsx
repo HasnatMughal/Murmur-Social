@@ -12,6 +12,7 @@ function Signup() {
     const [password,setPassword] = useState('')
     const navigate = useNavigate()
     console.log(email, name, password)
+    const [Error, setError] = useState('')
 
     const handleSubmit = async ({name, email,password}) => {
         try {
@@ -22,7 +23,7 @@ function Signup() {
            navigate("/")
           }
         } catch (error) {
-            console.log(error);
+            setError(error.message)
             
         }
     }
@@ -43,6 +44,7 @@ function Signup() {
             
             <Input type={"password"} placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}/>
             <button className='w-full bg-blue-600 text-white hover:bg-blue-700 p-2 rounded-2xl' type='submit'>Sign Up</button>
+            {Error !== "" ? <p className='text-red-600'>{Error}</p> : ""}
             </form>
             <h2 className=''>
             Already have an account? <Link to="/" className='hover:text-blue-400'>Login</Link>

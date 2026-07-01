@@ -14,7 +14,7 @@ function Login() {
     const navigate = useNavigate()
     const userDataExisting = useSelector((state) => state.auth.userData)
     // console.log(userDataExisting);
-    
+    const [Error, setError] = useState('')
 
     const handleSubmit = async ({email, password}) => {
 //         if(userDataExisting){
@@ -50,8 +50,7 @@ function Login() {
            console.log(existingSession,session);
            
         } catch (error) {
-            console.log(error);
-            
+            setError(error.message)
         }
     }
 
@@ -70,6 +69,7 @@ function Login() {
         <Input type={"email"} placeholder={"Email Adress"} onChange={(e) => setEmail(e.target.value)}/>
         
         <Input type={"password"} placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}/>
+        {Error !== "" ? <p className='text-red-600'>{Error}</p> : ""}
         <button className='w-full bg-blue-600 text-white hover:bg-blue-700 p-2 rounded-2xl' type='submit'>Login</button>
         </form>
         <h2 className=''>
