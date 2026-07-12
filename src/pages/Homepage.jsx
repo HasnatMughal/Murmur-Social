@@ -38,17 +38,17 @@ function Homepage() {
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 min-h-screen">
         <div className="flex flex-col w-full   items-center gap-2">
-          <div className=" flex w-full min-w-96 rounded-2xl items-center gap-4 flex-row justify-center bg-gray-100 px-3 py-2 ">
+          <div className=" flex w-full  rounded-2xl items-center gap-4 flex-row justify-center bg-gray-100 px-3  py-2 ">
             <Link to={`/feed/profile/${authorKaName}`}>
               <div
-                className="w-8 h-8 rounded-full flex items-center bg-gray-900 capitalize text-white justify-center"
+                className="w-8 h-8 rounded-full flex items-center bg-gray-900 capitalize text-white justify-center shrink-0"
                 alt=""
               >
                 {sp}
               </div>
             </Link>
 
-            <Link to="/feed/createPost">
+            <Link to="/feed/createPost" className="flex-1">
               <Input
                 className={"w-full"}
                 placeholder="What's on your mind today?"
