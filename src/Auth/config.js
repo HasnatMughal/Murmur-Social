@@ -86,7 +86,7 @@ export class DatabaseService{
           return await this.database.listDocuments(
                 conf.appwriteDatabase_id,
                 conf.appwriteCollection_id,
-
+                Query.orderDesc('$createdAt')
             )
         } catch (error) {
             throw error
